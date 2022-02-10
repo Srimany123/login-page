@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <!--meta tags//-->
+	  <meta charset="UTF-8">
+	  <meta name="Generator" content="EditPlus®">
+	  <meta name="Author" content="YALAVARTHI_SRIMAN">
+	  <meta name="Keywords" content="">
+	  <meta name="Description" content="TEAM_PROJECT OF 5 sriman,deepu,leela,rajesh,bala">
+	  <meta http-equiv="refresh" content="100">
+	  <title>Document</title>
+  <style>
+  /*top*/
+	  .top {
+	  background-color:yellow;
+	  padding:3px 4px 52px 6px;
+	  border:0;
+	  }
+	  .ta {
+	  overflow:auto;
+	  float:left;
+	  width:10%;
+	  height:80px;
+	  }
+	  .bar1,.bar2,.bar3 {
+	  width:30px;
+	  height:5px;
+	  background-color:black;
+	  margin:4px 0;
+	  transition:0.4s;
+	  }
+	  header {
+	  width:70%;
+	  color:grey;
+	  text-align:center;
+	  font-size:40px;
+	  overflow:auto;
+	  float:left;
+	  }
+	  .change .bar3 {
+	  -webkit-transform:rotate(-45deg);
+      transform:translate(0,0) rotate(-45deg);
+	  }
+	  .change .bar1 {
+	  -webkit-transform:rotate(45deg);
+	  transform:rotate(45deg) translate(5px,7px);
+	  }
+	  .change .bar2 {
+	  display:none;
+	  }
+  /*side bar toggle*/
+    .sidenav {
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: #e2e2e2;
+		overflow-x: hidden;
+		transition: 0.5s;
+		padding-top: 60px;
+	}
+	.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: #414141;
+		display: block;
+		transition: 0.3s
+	}
+	.sidenav a:hover, .offcanvas a:focus{
+		color: #000;
+	}
+	.sidenav .closebtn {
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		margin-left: 50px;
+	}
+	@media screen and (max-height: 450px){
+	  .sidenav {padding-top: 15px;}
+	  .sidenav a {font-size: 18px;}
+	}
+  /*log button*/
+	  .tak {
+	  background-color:white;
+	  border:0px outset yellow;
+	  margin:0px;
+	  float:right;
+	  border-radius:40px;
+	  }
+	  .log {
+	  width:40px;
+	  height:40px;
+	  border-radius:50%;
+	  }
+  /*page*/
+	  input[type=text],
+	  input[type=password] {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		box-sizing: border-box;
+	  }
+	  button {
+		background-color: #48d1cc;
+		color: white;
+		margin: 8px 0;
+		border: none;
+		cursor: pointer;
+	  }
+	  .cancelbtn {
+		width: auto;
+		padding: 10px 18px;
+		background-color: #4682b4;
+	  }
+	  .imgcontainer {
+		text-align: center;
+		margin: 24px 0 12px 0;
+		position: relative;
+	  }
+	  img.avatar {
+		width: 40%;
+		border-radius: 50%;
+	  }
+	  .container {
+		padding: 16px;
+	  }
+	  span.psw {
+		float: right;
+		padding-top: 16px;
+	  }
+	  .modal {
+	   display: none;
+	   position: fixed;
+	   z-index: 1;
+	   left: 0;
+	   top: 0;
+	   width:100%;
+	   height:100%;
+	   overflow: auto;
+	   background-color: rgb(0,0,0);
+	   background-color: rgba(0,0,0,0.4);
+	   padding-top: 60px;
+	  }
+	  .modal-content {
+		background-color: #fefefe;
+		margin: 5% auto 15% auto;
+		border: 1px solid #888;
+		width: 80%;
+		max-width:400px;
+	  }
+	  .close {
+		position: absolute;
+		right: 25px;
+		top: 0;
+		color: #000;
+		font-size: 35px;
+		font-weight: bold;
+	  }
+	  .close:hover,.close:focus {
+		color: red;
+		cursor: pointer;
+	  }
+	  .animate {
+	   -webkit-animation: animatezoom 0.6s;
+	   animation: animatezoom 0.6s
+	  }
+	  @-webkit-keyframes animatezoom {
+	   from {-webkit-transform: scale(0)}
+	   to {-webkit-transform: scale(1)}
+	  }
+	  @keyframes animatezoom {
+		from {transform: scale(0)}
+		to {transform: scale(1)}
+	  }
+	  @media screen and(max-width: 300px){
+		span.psw {
+		   display: block;
+		   float: none;
+		}
+		.cancelbtn {
+		   width: 100%;
+		}
+	  }
+  /*search*/
+   .search {
+   width:100%;
+   height:30px;
+   border-radius:20px;
+   }
+  /*photos*/
+    #show {
+	overflow:auto;
+	display:inline-block;
+	}
+	.hor-rol {
+	overflow:hidden;
+	display:inline;
+	float:left;
+	}
+   
+  </style>
+ </head>
+ <body src="\image\profile.jpg">
+ <!--top box//-->
+	 <div class="top">
+	 <div class="ta" onclick="openNav()">
+	 <div class="bar1"></div>
+	 <div class="bar2"></div>
+	 <div class="bar3"></div> 
+	 </div>
+	 <script>
+	 function myfun(x) {
+		 x.classList.toggle("change");
+	 }
+	 </script>
+	 <header><i>Find Instant Restuarant</i></header>
+     <div id="mySidenav" class="sidenav">
+     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+     <a href="#">Services</a>
+	 <a href="#">Favorites</a>
+     <a href="#">Transactions</a>
+     <a href="#">Contact</a>
+	 <a href="#">Feedback</a>
+     </div>
+	 <script>
+	 function openNav() {
+	 document.getElementById("mySidenav")
+	 .style.width="250px";
+	 }
+	 function closeNav() {
+	 document.getElementById("mySidenav")
+	 .style.width = "0";
+	 }
+	</script>
+ <!--login//-->
+  <button class="tak" onclick="document.getElementById('id01').style.display='block'">
+  <img class="log" src="image/login.png"><b style="color:black">Login</b></button>
+  </div>
+    <div id="id01" class="modal">
+    <form class="modal-content animate" action="newpage/menu icon.html" method="post">
+	 <div class="imgcontainer">
+	 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+	 <img src="image/login_log.png" alt="Avatar" class="avatar">
+	 </div>
+	 <div class="container">
+	  <label><b>Username</b></label>
+	  <input type="text" placeholder="Enter Username" name="uname" id="ubox" required autocomplete="user name" value="">
+	  <label><b>Password</b></label>
+	  <div class="error"><?= $errorMsg ?></div>
+	  <input type="password" placeholder="Enter Password" name="psw" id="pbox"required autocomplete="password">
+	<button type="submit" style="height:30px;" onclick="log()">Profile</button>
+	<p style="float:right;">
+	<input type="checkbox" checked="checked">Remember me</p>
+	</div>
+	 <div class="container"style="background-color:#f1f1f1">
+	 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+	 <span class="psw">Forgot <a href="#">password?</a></span>
+	  </div>
+	  </form>
+	</div>
+	<script>
+	var modal = document.getElementById('id01');
+	window.onclick = function(event) 
+	{
+		if (event.target == modal) 
+		{
+		 modal.style.display = "none";
+		}
+	}
+	function log()
+	{
+	  if(ubox.value=="hello"&& pbox.value=="world")
+	  {
+		window.location="newpage/menu icon"
+	  }
+	  else
+	  {
+	    document.write("wrong credentials.");
+	  }
+	}
+    </script>
+ <!--search bar//-->
+  <input type="text" class="search" placeholder="How can i help you ?"><br>
+ <!--photos//-->
+  <div>
+   <img class="hor-rol" src="image\aankhi-jhyal-restaurant.jpg" style="width:400px;border:10px;"><br><br><br><br>
+   <p>	name : aankhi restaurant</p>
+   <p>	location : hyderabad</p>
+   <p>	availability : 6 am to 9 pm</p><br><br><br><br><br>
+   <img class="hor-rol" src="image\Gidleigh-Tables.jpg" style="width:400px;border:10px;"><br><br><br><br><br>
+   <p>	name : Gidleigh Tables</p>
+   <p>	location : hyderabad</p>
+   <p>	availability : 9 am to 10 pm</p><br><br><br><br><br>
+   <img class="hor-rol" src="image\sakoon.jpg" style="width:400px;border:10px;"><br><br><br><br>
+   <p>	name : Gidleigh Tables</p>
+   <p>	location : hyderabad</p>
+   <p>	availability : 8 am to 11:30 pm</p><br>
+  </div><br>
+ <!--footer//-->
+  <footer class="foot" style="background-color:blue;color:white;padding:4px;text-align:center;">copyright &copy; 2021</footer>
+ </body>
+</html>
